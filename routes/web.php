@@ -64,3 +64,12 @@ Route::get('dd', function () {
 Route::get('/app', function () {
     return 'Zona horaria: ' . config('app.timezone') . ". Nombre de la app: " . config('app.name');
 });
+
+//Route::view('producto', 'almacen.producto');
+Route::get('producto', function () {
+    //return view('almacen.producto', ['nombre' => 'Impresora LX300', 'marca' => 'Epson']);
+    //return view('almacen.producto')->with(['nombre' => 'Impresora LX300', 'marca' => 'Epson']);
+    $nombre = "Impresora LX300";
+    $marca = "Epson";
+    return view('almacen.producto', compact('nombre', 'marca'));
+});
