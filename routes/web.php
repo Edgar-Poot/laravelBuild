@@ -48,3 +48,19 @@ Route::group(['prefix' => 'admin'], function () {
         return "Hello Admin dashboard 2";
     });
 });
+
+// Helpers
+//env() -> obtener variables de entorno
+Route::get('db', function () {
+    return 'La base de datos usada es: ' . env('DB_CONNECTION');
+});
+//dd() -> depuración rápida
+Route::get('dd', function () {
+    $nombre = "Edgar";
+    dd($nombre);
+    return env('DB_CONNECTION');
+});
+//config() -> acceder a las configuraciones de la aplicación
+Route::get('/app', function () {
+    return 'Zona horaria: ' . config('app.timezone') . ". Nombre de la app: " . config('app.name');
+});
