@@ -73,3 +73,20 @@ Route::get('producto', function () {
     $marca = "Epson";
     return view('almacen.producto', compact('nombre', 'marca'));
 });
+
+Route::get('condicional/{nota}', function ($nota = 12) {
+    return view('estructuras.condicional', compact('nota'));
+});
+
+Route::get('control/{numero}', function ($numero = 2) {
+    return view('estructuras.switch', compact('numero'));
+});
+
+Route::get('while/{numero}', function ($numero = 2) {
+    return view('estructuras.while', compact('numero'));
+});
+
+Route::get('foreach/{numero}', function ($numero = 2) {
+    $lista = ["platanos", "naranjas", "uvas", "mandarinas"];
+    return view('estructuras.foreach', compact('lista'));
+});
