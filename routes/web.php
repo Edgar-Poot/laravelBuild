@@ -90,3 +90,10 @@ Route::get('foreach/{numero}', function ($numero = 2) {
     $lista = ["platanos", "naranjas", "uvas", "mandarinas"];
     return view('estructuras.foreach', compact('lista'));
 });
+
+Route::get('categoria', function () {
+    return view('categoria');
+});
+Route::get('contacto', function () {
+    return view('contacto');
+});
