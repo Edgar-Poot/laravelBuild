@@ -24,3 +24,15 @@ class Entrada extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 }
+
+/**
+ * php artisan tinker
+ * $entrada = new App\Models\Entrada();
+ * $entrada->titulo="Primera entrada";
+ * $entrada->tag="Noticias";
+ * $entrada->contenido="Contenido de la primera entrada";
+ * $entrada->imagen="imagen.png";
+ * $entrada->user_id=1;
+ * $entrada->save();
+ * User::with('entradas')->get()->toArray();
+ */
