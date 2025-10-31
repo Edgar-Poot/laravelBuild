@@ -13,7 +13,7 @@ class EntradasTableSeeder extends Seeder
      */
     public function run(): void
     {
-        Entrada::create([
+        /*Entrada::create([
             'user_id' =>  1, //ID de usuario.
             'titulo' => 'Tercer título',
             'imagen' => 'imagen3.jpg',
@@ -26,6 +26,7 @@ class EntradasTableSeeder extends Seeder
             'imagen' => 'imagen4.jpg',
             'tag' => 'Etiqueta4',
             'contenido' => 'Este es el contenido del cuarto registro',
-        ]);
+        ]);*/
+        Entrada::factory()->count(100)->create();
     }
 }
