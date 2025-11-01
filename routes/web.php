@@ -172,3 +172,9 @@ Route::get('/getId', function () {
 //Route::resource('entrada', EntradaController::class);
 //Route::resource('entrada', EntradaController::class)->only('index', 'show');
 Route::resource('entrada', EntradaController::class)->except('destroy', 'update');
+Route::get('respuesta', function () {
+    return response('Hola esta es una respuesta: ', 200); //Código de respuesta HTTP
+});
+Route::get('respuesta2', function () {
+    return response('Hola esta es una respuesta: ', 404); //Código de respuesta HTTP
+});

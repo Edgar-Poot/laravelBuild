@@ -11,12 +11,16 @@ class EntradaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         //return view('entrada.index');
         //$entradas = Entrada::all();
         //return view('entrada.index', compact('entradas'));
-        return "Index";
+        //return "Index";
+        //return $request->query();
+        //return $request->path();
+        //return $request->url();
+        return $request->input('titulo', 'Sin título');
     }
 
     /**
