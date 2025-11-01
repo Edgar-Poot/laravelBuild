@@ -24,21 +24,32 @@
                 <div class="row">
                     <div class="form-group col-12 col-md-6">
                         <label for="titulo">Título</label>
-                        <input type="text" class="form-control" required name="titulo" placeholder="Ingrese el título">
+                        <input type="text" class="form-control" required value="{{old('titulo')}}" name="titulo" placeholder="Ingrese el título">
                     </div>
                     <div class="form-group col-12 col-md-6">
                         <label for="tag">Tag</label>
-                        <input type="text" class="form-control" required name="tag" placeholder="Ingrese el tag">
+                        <input type="text" class="form-control" required value="{{old('tag')}}" name="tag" placeholder="Ingrese el tag">
                     </div>
                     <div class="form-group col-12 col-md-6">
                         <label for="contenido">Contenido</label>
-                        <input type="text" class="form-control" required name="contenido" placeholder="Ingrese el contenido">
+                        <input type="text" class="form-control" required value="{{old('contenido')}} " name="contenido" placeholder="Ingrese el contenido">
                     </div>
                     <div class="center mt-4">
                         <button type="submit" class="btn btn-primary">Guardar</button>
                     </div>
                 </div>
             </form>
+            @if($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach($errors->all() as $error)
+                    <li>
+                        {{$error}}
+                    </li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
         </section>
     </div>
 </body>
