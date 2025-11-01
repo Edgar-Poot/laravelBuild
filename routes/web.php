@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\EntradaController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -164,3 +165,10 @@ Route::get('/getId', function () {
         ]);
     return $id;
 });
+
+
+//Controllers
+//Route::get('entrada', [EntradaController::class, 'index']);
+//Route::resource('entrada', EntradaController::class);
+//Route::resource('entrada', EntradaController::class)->only('index', 'show');
+Route::resource('entrada', EntradaController::class)->except('destroy', 'update');
