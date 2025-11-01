@@ -28,7 +28,7 @@ class EntradaController extends Controller
      */
     public function create()
     {
-        return "Create";
+        return view('entrada.create');
     }
 
     /**
@@ -36,7 +36,15 @@ class EntradaController extends Controller
      */
     public function store(Request $request)
     {
-        return "Store";
+        $entrada = new Entrada();
+        $entrada->titulo = $request->input('titulo');
+        $entrada->tag = $request->input('tag');
+        $entrada->contenido = $request->input('contenido');
+        $entrada->imagen = "";
+        $entrada->user_id = 1;
+        $entrada->save();
+
+        return redirect()->route('entrada.create')->with('success', '¡Entrada creada con exito!');
     }
 
     /**
